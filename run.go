@@ -53,7 +53,11 @@ func newCommand(version string, stdout io.Writer) *cli.Command {
 		// os.Exit, so the exit code stays testable.
 		ExitErrHandler: func(context.Context, *cli.Command, error) {},
 		Flags: []cli.Flag{
-			&cli.IntFlag{Name: flagCount, Aliases: []string{"n"}, Usage: "output COUNT lines instead of repeating forever"},
+			&cli.IntFlag{
+				Name:    flagCount,
+				Aliases: []string{"n"},
+				Usage:   "output COUNT lines instead of repeating forever",
+			},
 		},
 		Action: action(stdout),
 	}
