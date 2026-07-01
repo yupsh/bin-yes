@@ -41,11 +41,11 @@ func TestRun(t *testing.T) {
 	cases := []struct {
 		name       string
 		version    string
+		wantOut    string
+		wantErrSub string
 		args       []string
 		bound      int
-		wantOut    string
 		wantCode   int
-		wantErrSub string
 	}{
 		{
 			name:     "default y with count",
